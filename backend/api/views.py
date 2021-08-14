@@ -6,10 +6,14 @@ from django.contrib.auth.models import User
 from rest_framework.permissions import IsAdminUser
 from .permissions import IsSuperUser,IsAuthororReadOnly,IsSuperuserOrStaff
 
+
+
 class ArticleList(ListCreateAPIView):
     queryset=Article.objects.all()
     serializer_class=ArticleSerializer
     permission_classes=(IsAuthororReadOnly,)
+
+
 class ArticleDetail(RetrieveUpdateDestroyAPIView):
     queryset=Article.objects.all()
     serializer_class=ArticleSerializer
