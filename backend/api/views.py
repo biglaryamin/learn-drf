@@ -23,6 +23,9 @@ class ArticleDetail(RetrieveUpdateDestroyAPIView):
 
 class UserList(ListCreateAPIView):
     queryset=User.objects.all()
+    # def get_queryset(self):
+    #     print(reques)
+    #     return super().get_queryset()
     serializer_class=UserSerializer
     permission_classes=(IsSuperuserOrStaff,)
 
