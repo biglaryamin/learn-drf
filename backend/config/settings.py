@@ -41,6 +41,13 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'api.apps.ApiConfig',
     'rest_framework.authtoken',
+
+    'rest_auth',
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +140,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+
+
+SITE_ID = 1
