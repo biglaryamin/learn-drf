@@ -37,17 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'blog.apps.BlogConfig',
     'api.apps.ApiConfig',
+    'django.contrib.sites',
+
+
+    'rest_framework_simplejwt',
+
+
+    'rest_framework',
     'rest_framework.authtoken',
 
-    'rest_auth',
 
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'rest_auth.registration',
+
+    # 'rest_auth',
+    # 'allauth',
+    # 'allauth.account',
+    # 'rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +143,8 @@ REST_FRAMEWORK = {
         'api.permissions.IsStafforReadOnly',
     ],
      'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
     ]
 }
 
